@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 
+import Card from "@/components/General/Card"
 import bg from "../public/bg.png"
 import logo from "../public/logo.png"
 import title from "../public/title.png"
@@ -23,12 +24,20 @@ export default function Home() {
   return (
     <div className="flex flex-col bg-blue-600 relative">
       
-      <img src={bg.src} alt="bg" className="w-screen h-screen bg-repeat-y absolute top-0 left-0 "/>
+      <img src={bg.src} alt="bg" className="w-screen absolute top-0 left-0 " style={{height: '750px'}}/>
 
       <div className="relative w-screen " style={{height: '750px'}}>
         <img src={logo.src} alt="logo" className="w-32 h-32 mx-auto bottom-0 left-0 right-0 absolute" style={{top: '570px'}}/>
         <img src={title.src} alt="title" className="w-screen absolute -top-28" style={{height: '800px'}}/>
       </div>
+
+      <div className='flex justify-center items-center bg-white 
+        rounded-t-xl w-screen overflow-x-auto space-x-4 py-4'>
+        <Card color='yellow'/>
+        <Card color='green'/>
+        <Card color='green'/>
+      </div>
+
 
       {/* <div className="text-white relative z-20 flex flex-col items-center space-y-6 pb-12">
         <button className="add-more bg-green-500" onClick={()=>handleClick('/events/registration')}>Register Now</button>
@@ -38,11 +47,4 @@ export default function Home() {
   )
 }
 
-// Home.getLayout = function getLayout(page) {
-//   return (
-//     <Layout>
-//       {page}
-//     </Layout>
-//   )
-// }
 
