@@ -1,19 +1,17 @@
 import { useState, useEffect } from 'react'
-import axios from 'axios'
 
 import { getAccessToken, getEvents } from '@/util/prismic.helper'
-import { course, department, year } from '@/util/constants'
 
-import Input from '@/components/Form/Input'
-import Select from '@/components/Form/Select'
-import Layout from '@/components/Layout/Layout'
-import { useForm } from 'react-hook-form'
+import { BsChevronDoubleDown, BsChevronDoubleUp } from "react-icons/bs"
 import blue from '../../../public/blue.png'
 import blue_small from '../../../public/blue-small.png'
-import { BsChevronDoubleDown, BsChevronDoubleUp } from "react-icons/bs"
-import Spinner from '@/components/General/Spinner'
+
 import Portal from '@/components/Layout/Portal'
-import Overlay from '@/components/Layout/Overlay'
+import Layout from '@/components/Layout/Layout'
+import PersonalDetails from '@/modules/Events/PersonalDetails'
+import OffStageEvents from '@/modules/Events/OffStageEvents'
+import OffStageOverlay from '@/components/Layout/OffStageOverlay'
+
 
 
 export default function OffStageRegistration() {
@@ -32,14 +30,11 @@ export default function OffStageRegistration() {
     zIndex: '0'
   }
 
-  const { register,formState : { errors },handleSubmit} = useForm()
-
   const [click, setclick] = useState(false)
   const [eventData, seteventData] = useState([])
-  const [message, setmessage] = useState('')
-  const [addEvent, setaddEvent] = useState(0)
-  const [loading, setloading] = useState(false)
+  const [formData, setformData] = useState([])
   const [portalOpen, setportalOpen] = useState(false)
+  const [showEvents, setshowEvents] = useState(false)
 
 
   useEffect(() => {
@@ -51,32 +46,10 @@ export default function OffStageRegistration() {
     await getEvents(ref, 'off_stage_events', seteventData)
   }
 
-  const onSubmit = async (data) => {
-    setloading(true)
-    data.type = 'offstage'
-    console.log(data)
-    await axios.post('/api/form',{
-      data : data,
-      headers: { 'Content-Type':'multipart/form-data' }
-    }).then(res => {
-      setmessage(res.data.message)
-      setportalOpen(true)
-    }).catch(err => {
-      setmessage(err.message)
-      setportalOpen(true)
-    }).finally(() =>
-      setloading(false)
-    )
-  } 
 
   const handleClick = ()=> {
     setclick(!click)
   }
-
-  const addMoreEvents = () => {
-    setaddEvent(addEvent + 1)
-  }
-
 
   return (
     <div className="flex flex-col items-center px-3">
@@ -88,29 +61,16 @@ export default function OffStageRegistration() {
           </div>
         </div>
       ) : (
-        <div className={`flex flex-col items-center w-screen h-screen pt-60 ${portalOpen && 'filter blur-lg'}`} style={style1}>
-          <form onSubmit={handleSubmit(onSubmit)} className='form'>
-            <Input label='Name' htmlFor='name' error={errors.name} register={register} required={true}/>
-            <Select name='course' values={course} error={errors.course} register={register} required={true}  />
-            <Select name='year' values={year} error={errors.year} register={register} required={true} />
-            <Select name='department' values={department} error={errors.department} register={register} required={true}/>
-            <h3>Events</h3>
-            <Select name='off_stage_event_1' values={eventData} error={errors.off_stage_event_1} register={register} />
-            {addEvent > 0 && <Select name='off_stage_event_2' values={eventData} error={errors.off_stage_event_2} register={register} /> }
-            {addEvent > 1 && <Select name='off_stage_event_3' values={eventData} error={errors.off_stage_event_3} register={register} /> }
-
-            {addEvent < 2 && <div className='add-more' onClick={addMoreEvents}>Participate more</div> }
-            
-              {!loading ? <input type='submit' value='Submit' className='submit'/> :
-              <div className='add-more'>
-                <Spinner/>
-              </div>}
-            </form>
+        <div className={`flex flex-col items-center w-screen h-screen pt-56 ${portalOpen &&  'filter blur-lg'}`} style={style1}>
+          {showEvents ?
+            <OffStageEvents eventData={eventData} setformData={setformData} formData={formData} setportalOpen={setportalOpen}/> :
+            <PersonalDetails setformData={setformData} setshowEvents={setshowEvents} color='blue'/>
+          }
         </div>
       )}
 
       {portalOpen && <Portal>
-        <Overlay message={message} color='blue'/>
+        <OffStageOverlay color='blue' values={formData}/>
       </Portal>}
      
     </div>

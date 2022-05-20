@@ -34,18 +34,16 @@
     @apply w-6 h-6 text-white;
   }
   .form{
-    @apply flex flex-col items-center justify-center space-y-3 pb-8;
+    @apply flex flex-col items-center justify-center space-y-3 ;
   }
   .input{
     @apply bg-gray-100 outline-none rounded-lg px-2 w-72 h-12 text-gray-800 placeholder-gray-400
     focus:border-b-4 focus:border-blue-600 ;
   }
   .submit{
-    @apply bg-blue-600 rounded-lg px-2 w-72 h-12 text-white;
+    @apply rounded-lg px-2 w-72 h-12 text-white ;
   }
-  .add-more{
-    @apply bg-blue-600 rounded-lg px-2 w-72 h-12 text-white flex justify-center items-center;
-  }
+
 }
 
 *{

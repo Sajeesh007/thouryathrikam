@@ -1,17 +1,18 @@
 import Error from "./Error";
 
-export default function Select({name, values, register, required, error}){
+export default function Select({label, name, values, register, required, error}){
+
 
   return(
     <div className="flex flex-col space-y-2">
       <div className="flex flex-col items-center space-x-8">
-        <div className='flex justify-start items-center space-x-2' >
+        <div className='flex flex-col justify-center space-y-2' >
+          <label>{label}</label>
           <select  className='input' {...register(name, { 
             required: required
             })} >
             { values?.map((item,index)=> 
-                <option value={item} key={item} disabled={index == 0 && true} selected={index == 0 && true} 
-                  hidden={index == 0 && true} >
+                <option value={item} key={item} >
                   {item}
                 </option>
             )}
