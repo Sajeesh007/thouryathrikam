@@ -47,7 +47,7 @@ export default function OnStageEvents({eventData, setformData, formData, setport
 				{(addEvent == 2 || addEvent == 3) && <div className='rounded-lg px-2 w-72 h-12 text-white flex justify-center items-center bg-red-600' 
         onClick={addLessEvents}>Participate less</div> }
 				
-				<input type='submit' value='Submit' className='submit'/> 
+				<input type='submit' value='Submit' className='rounded-lg px-2 w-72 h-12 text-white bg-green-600'/> 
 			</form>
       <Progress page={2}/>
     </div>

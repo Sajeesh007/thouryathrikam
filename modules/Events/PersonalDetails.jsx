@@ -24,7 +24,7 @@ export default function PersonalDetails({setformData, setshowEvents, color}) {
   return (
     <div className="flex flex-col items-center space-y-6 relative">
       <h2>Personal Details</h2>
-      <form onSubmit={handleSubmit(onSubmit)} className='form'>
+      <form onSubmit={handleSubmit(onSubmit)} className='form '>
         <Input type='text' label='Name' htmlFor='name' error={errors.name} register={register} required={true}/>
         <Select label='Course' name='course' values={course} error={errors.course} register={register} required={true}  />
         <Select label='Year' name='year' values={year} error={errors.year} register={register} required={true} />

@@ -41,9 +41,8 @@
     focus:border-b-4 focus:border-blue-600 ;
   }
   .submit{
-    @apply rounded-lg px-2 w-72 h-12 text-white ;
+    @apply rounded-lg px-2 w-72 h-12 text-white;
   }
-
 }
 
 *{

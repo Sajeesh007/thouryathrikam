@@ -61,7 +61,7 @@ export default function OffStageRegistration() {
           </div>
         </div>
       ) : (
-        <div className={`flex flex-col items-center w-screen h-screen pt-56 ${portalOpen &&  'filter blur-lg'}`} style={style1}>
+        <div className={`flex flex-col items-center w-screen h-screen pt-56 ${portalOpen &&  'filter blur-lg'}`} style={style1} >
           {showEvents ?
             <OffStageEvents eventData={eventData} setformData={setformData} formData={formData} setportalOpen={setportalOpen}/> :
             <PersonalDetails setformData={setformData} setshowEvents={setshowEvents} color='blue'/>
@@ -70,7 +70,7 @@ export default function OffStageRegistration() {
       )}
 
       {portalOpen && <Portal>
-        <OffStageOverlay color='blue' values={formData}/>
+        <OffStageOverlay color='blue' values={formData} setportalOpen={setportalOpen}/>
       </Portal>}
      
     </div>

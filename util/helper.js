@@ -24,4 +24,10 @@ export const checkEventsSelectError = (data, setError) => {
 	data?.off_stage_event_1 == 'Select The Events' && setError('off_stage_event_1',{
 		type: 'required', message: 'This field is required' }, { shouldFocus: true
 	})
+	data?.off_stage_event_2 == 'Select The Events' && setError('off_stage_event_2',{
+		type: 'required', message: 'This field is required' }, { shouldFocus: true
+	})
+	data?.off_stage_event_3 == 'Select The Events' && setError('off_stage_event_3',{
+		type: 'required', message: 'This field is required' }, { shouldFocus: true
+	})
 }

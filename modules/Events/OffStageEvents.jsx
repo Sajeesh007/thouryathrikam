@@ -18,14 +18,20 @@ export default function OffStageEvents({eventData, setformData, formData, setpor
     if(addEvent == 1){
       delete data?.off_stage_event_2
       delete data?.off_stage_event_3
+      delete formData?.off_stage_event_2
+      delete formData?.off_stage_event_3
+      console.log(data)
     }else if(addEvent == 2){
       delete data?.off_stage_event_3
+      delete formData?.off_stage_event_3
     }
     checkEventsSelectError(data, setError)
     setformData({...formData,...data})
     if(data.off_stage_event_1 == 'Select The Events' || data.off_stage_event_2 == 'Select The Events' || data.off_stage_event_3 == 'Select The Events') setportalOpen(false)
     else setportalOpen(true)
   } 
+
+  console.log(formData)
 
   const addMoreEvents = () => {
     setaddEvent(addEvent < 3 && addEvent + 1)
@@ -47,7 +53,7 @@ export default function OffStageEvents({eventData, setformData, formData, setpor
 				{(addEvent == 2 || addEvent == 3) && <div className='rounded-lg px-2 w-72 h-12 text-white flex justify-center items-center bg-red-600' 
         onClick={addLessEvents}>Participate less</div> }
 				
-				<input type='submit' value='Submit' className='submit'/> 
+				<input type='submit' value='Submit' className='rounded-lg px-2 w-72 h-12 text-white bg-blue-600'/> 
 			</form>
       <Progress page={2}/>
     </div>
