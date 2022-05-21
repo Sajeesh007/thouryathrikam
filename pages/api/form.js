@@ -10,8 +10,6 @@ export default async function handler(req,res){
 
   const { body : { data } } = req
 
-  console.log(req.body);
-
   const id = { 
     offstage: '1hpm8b2IPjNS7g9Cyi2zjOlGsaZs6Yot20JN-GTgAPNQ',
     onstage: '1RxZ-aSqdxZk-rrsjbcZ5sUIXdjZ7X31iEYlEYuTRwi8'
@@ -22,7 +20,7 @@ export default async function handler(req,res){
   delete data.type
 
   const scopes = ['https://www.googleapis.com/auth/spreadsheets','https://www.googleapis.com/auth/drive']
-  const { privateKey } = JSON.parse(process.env.GOOGLE_PRIVATE_KEY)
+  // const { privateKey } = JSON.parse(process.env.GOOGLE_PRIVATE_KEY)
 
   //auth
   try{
@@ -30,7 +28,7 @@ export default async function handler(req,res){
       scopes: scopes,
       projectId: process.env.GOOGLE_PROJECTID,
       credentials: {
-        private_key: privateKey,
+        private_key: process.env.GOOGLE_PRIVATE_KEY,
         client_email: process.env.GOOGLE_CLIENT_EMAIL,
       },
     })
