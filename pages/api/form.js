@@ -12,7 +12,7 @@ export default async function handler(req,res){
 
   const id = { 
     offstage: '1hpm8b2IPjNS7g9Cyi2zjOlGsaZs6Yot20JN-GTgAPNQ',
-    onstage: '1RxZ-aSqdxZk-rrsjbcZ5sUIXdjZ7X31iEYlEYuTRwi8'
+    onstage: '1RxZ-aSqdxZk-rrsjbcZ5sUIXdjZ7X31iEYlEYuTRwi8' 
   }
   const spreadsheetId = data?.type == 'on_stage' ? id.onstage : id.offstage
 
@@ -56,10 +56,5 @@ export default async function handler(req,res){
   } catch(e) {
     res.status(404).json({message : 'Unable to process the request, press continue and please try again'})
   }
-
-
-  
-
-  
 
 }
