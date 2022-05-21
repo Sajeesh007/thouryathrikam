@@ -16,7 +16,7 @@ export default function OnStageOverlay({color, values, setportalOpen}) {
   }
 
   return (
-    <div className={`flex justify-center items-center w-11/12 h-60 border   
+    <div className={`flex justify-center items-center w-11/12 h-68 border   
       absolute z-50 inset-0 rounded-lg shadow-lg  m-auto px-8 
       ${color == 'blue' ? 'shadow-blue-300 border-blue-600' : 'shadow-green-200 border-green-500'}`}>
 
@@ -38,11 +38,11 @@ export default function OnStageOverlay({color, values, setportalOpen}) {
             </div>
             { values.on_stage_event_2 && <div className='flex justify-center items-center'>
               <h5>Event 2 : &nbsp;</h5>
-              <p>{values.off_stage_event_2}</p>
+              <p>{values.on_stage_event_2}</p>
             </div>}
             {values.on_stage_event_3 && <div className='flex justify-center items-center'>
               <h5>Event 3 : &nbsp;</h5>
-              <p>{values.off_stage_event_3}</p>
+              <p>{values.on_stage_event_3}</p>
             </div>}
           </div>
 

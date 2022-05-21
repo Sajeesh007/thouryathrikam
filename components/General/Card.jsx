@@ -2,11 +2,6 @@ import { useRouter } from 'next/router'
 import bg from "@/public/bg_small.png"
 import Image from 'next/image'
 
-// className={`flex flex-col justify-center items-center space-y-6 font-man shadow-lg border 
-//       ${color == 'green' ? 'bg-green-500 shadow-green-900 border-green-200' : 
-//         color =='red' ? 'bg-red-500 shadow-red-900 border-red-200'  : 
-//         'bg-yellow-500 shadow-yellow-900 border-yellow-200'} rounded-3xl
-//         w-80 h-60 relative`}
 
 export default function Card({color, heading, route}) {
 

@@ -48,12 +48,12 @@ export default function OffStageEvents({eventData, setformData, formData, setpor
 				{(addEvent == 2 || addEvent == 3) && <Select name='off_stage_event_2' label='Event 2' values={eventData} error={errors.off_stage_event_2} register={register} /> }
 				{addEvent == 3 &&  <Select name='off_stage_event_3' label='Event 3' values={eventData} error={errors.off_stage_event_3} register={register} /> }
 
-				{addEvent < 3 && <div className='rounded-lg px-2 w-72 h-12 text-white flex justify-center items-center bg-blue-600' 
+				{addEvent < 3 && <div className='rounded-lg px-2 w-72 h-12 text-white flex justify-center items-center bg-blue-500' 
           onClick={addMoreEvents}>Participate more</div> }
-				{(addEvent == 2 || addEvent == 3) && <div className='rounded-lg px-2 w-72 h-12 text-white flex justify-center items-center bg-red-600' 
+				{(addEvent == 2 || addEvent == 3) && <div className='rounded-lg px-2 w-72 h-12 text-white flex justify-center items-center bg-red-500' 
         onClick={addLessEvents}>Participate less</div> }
 				
-				<input type='submit' value='Submit' className='rounded-lg px-2 w-72 h-12 text-white bg-blue-600'/> 
+				<input type='submit' value='Submit' className='rounded-lg px-2 w-72 h-12 text-white bg-blue-500'/> 
 			</form>
       <Progress page={2}/>
     </div>

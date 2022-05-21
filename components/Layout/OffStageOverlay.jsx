@@ -18,7 +18,7 @@ export default function OffStageOverlay({color, values, setportalOpen}) {
   return (
     <div className={`flex justify-center items-center w-11/12 h-68 border   
       absolute z-50 inset-0 rounded-lg shadow-lg  m-auto px-8 
-      ${color == 'blue' ? 'shadow-blue-300 border-blue-600' : 'shadow-green-200 border-green-500'}`}>
+      ${color == 'blue' ? 'shadow-blue-300 border-blue-500' : 'shadow-green-200 border-green-500'}`}>
 
       {message ? 
         <div className='flex flex-col justify-center items-center space-y-4'>

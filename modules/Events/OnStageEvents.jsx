@@ -18,8 +18,11 @@ export default function OnStageEvents({eventData, setformData, formData, setport
     if(addEvent == 1){
       delete data?.on_stage_event_2
       delete data?.on_stage_event_3
+      delete formData?.on_stage_event_2
+      delete formData?.on_stage_event_3
     }else if(addEvent == 2){
       delete data?.on_stage_event_3
+      delete formData?.on_stage_event_3
     }
     checkEventsSelectError(data, setError)
     setformData({...formData,...data})

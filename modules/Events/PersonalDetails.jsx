@@ -31,7 +31,7 @@ export default function PersonalDetails({setformData, setshowEvents, color}) {
         <Select label='Department' name='department' values={department} error={errors.department} register={register} required={true}/>
         <Input type='tel' label='Whatsapp Number' htmlFor='phone' error={errors.name} register={register} required={true}/>
         <Input type='email' label='College Mail Id' htmlFor='email' error={errors.name} register={register} required={true}/>
-        <input type='submit' value='Submit' className={`submit ${color == 'blue' ? 'bg-blue-600' : 'bg-green-600' }`}/> 
+        <input type='submit' value='Submit' className={`submit ${color == 'blue' ? 'bg-blue-500' : 'bg-green-500' }`}/> 
       </form>
       <Progress page={1}/>
     </div>

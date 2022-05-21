@@ -17,35 +17,42 @@ export default async function handler(req,res){
   const { privateKey } = JSON.parse(process.env.GOOGLE_PRIVATE_KEY)
 
   //auth
-  const auth = new google.auth.GoogleAuth({
-    scopes: scopes,
-    projectId: process.env.GOOGLE_PROJECTID,
-    credentials: {
-      private_key: privateKey,
-      client_email: process.env.GOOGLE_CLIENT_EMAIL,
-    },
-  })
-  const authToken  = await auth.getClient()
-
-  //sheets
-  const date = new Date()
-  const val = Object.values(data)
-  const sheets = google.sheets({version: 'v4',auth: authToken})
-  const values = [[date.toUTCString(),...val]]
-
   try{
-      sheets.spreadsheets.values.append({
-      spreadsheetId: spreadsheetId,
-      range:'Sheet1!A1',
-      valueInputOption: 'RAW',
-      resource: {
-        values
-      }
+    const auth = new google.auth.GoogleAuth({
+      scopes: scopes,
+      projectId: process.env.GOOGLE_PROJECTID,
+      credentials: {
+        private_key: privateKey,
+        client_email: process.env.GOOGLE_CLIENT_EMAIL,
+      },
     })
-    res.status(200).json({message : 'Your response has been successfully recorded'})
-  } catch(e){
+
+    const authToken  = await auth.getClient()
+    //sheets
+    const date = new Date()
+    const val = Object.values(data)
+    const sheets = google.sheets({version: 'v4',auth: authToken})
+    const values = [[date.toUTCString(),...val]]
+
+    try{
+        sheets.spreadsheets.values.append({
+        spreadsheetId: spreadsheetId,
+        range:'Sheet1!A1',
+        valueInputOption: 'RAW',
+        resource: {
+          values
+        }
+      })
+      res.status(200).json({message : 'Your response has been successfully recorded'})
+    } catch(e){
+      res.status(404).json({message : 'Unable to process the request, press continue and please try again'})
+    }
+  } catch(e) {
     res.status(404).json({message : 'Unable to process the request, press continue and please try again'})
   }
+
+
+  
 
   
 
