@@ -49,7 +49,7 @@ export default async function handler(req,res){
           values
         }
       })
-      res.status(200).json({message : 'Your response has been successfully recorded'})
+      res.status(200).json({message : 'Your response has been recorded successfully'})
     } catch(e){
       res.status(404).json({message : 'Unable to process the request, press continue and please try again'})
     }

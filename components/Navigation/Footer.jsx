@@ -9,7 +9,7 @@ export default function Footer() {
   
   return (
     <div className='fixed w-full h-16 grid grid-cols-3 justify-items-center place-items-center text-gray-300 
-    bottom-0 z-50 bg-gradient-to-t from-black to-transparent '>
+    -bottom-0.5 z-50 bg-gradient-to-t from-black to-transparent '>
         <Link href='/events'><a>
           <div className='flex flex-col justify-center items-center text-xs'>
             <AiOutlineTeam className='menu-icon text-white'/>

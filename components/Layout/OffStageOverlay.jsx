@@ -16,7 +16,7 @@ export default function OffStageOverlay({color, values, setportalOpen}) {
   }
 
   return (
-    <div className={`flex justify-center items-center w-11/12 h-68 border   
+    <div className={`flex justify-center items-center w-11/12 h-80 border   
       absolute z-50 inset-0 rounded-lg shadow-lg  m-auto px-8 
       ${color == 'blue' ? 'shadow-blue-300 border-blue-500' : 'shadow-green-200 border-green-500'}`}>
 
@@ -31,7 +31,7 @@ export default function OffStageOverlay({color, values, setportalOpen}) {
         <div className='flex flex-col justify-center items-center space-y-3'>
           <h3 className='text-center'>You will be registered for the following events</h3>
           {/* events list  */}
-          <div className='flex flex-col justify-center items-center'>
+          <div className='flex flex-col justify-center items-center w-80'>
             <div className='flex justify-center items-center'>
               <h5>Event 1 : &nbsp;</h5>
               <p>{values.off_stage_event_1}</p>

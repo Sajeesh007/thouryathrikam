@@ -2,7 +2,7 @@ import { useState, useEffect  } from 'react'
 
 import { getAccessToken, getEvents } from '@/util/prismic.helper'
 
-import bg from '@/public/tribal_bg_3.webp'
+import bg from '@/public/tribal_bg_2.webp'
 import green_small from '@/public/green-small.png'
 import { BsChevronDoubleDown } from "react-icons/bs"
 

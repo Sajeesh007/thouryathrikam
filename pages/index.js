@@ -27,7 +27,7 @@ export default function Home() {
 
       <button className='bg-yellow-500 rounded-full w-64 h-14 text-white font-man uppercase text-xl
        z-50 fixed top-100 inset-x-0 mx-auto shadow-lg shadow-gray-800'
-        onClick={()=>router.push(`/events/register`)}>
+        onClick={()=>router.push(`/events`)}>
         View Events
       </button>
 

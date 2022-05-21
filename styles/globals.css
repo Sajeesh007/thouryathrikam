@@ -27,7 +27,7 @@
     @apply text-lg font-bold;
   }
   h6{
-    @apply text-base;
+    @apply text-base font-semibold;
   }
   p{
     @apply text-sm;
