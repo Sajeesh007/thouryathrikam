@@ -35,19 +35,21 @@ export default async function handler(req,res){
     const values = [[date.toUTCString(),...val]]
 
     try{
-        sheets.spreadsheets.values.append({
+        const response = (await sheets.spreadsheets.values.append({
         spreadsheetId: spreadsheetId,
         range:'Sheet1!A1',
         valueInputOption: 'RAW',
         resource: {
           values
         }
-      })
-      res.status(200).json({message : 'Your response has been recorded successfully'})
+      })).data
+      res.status(200).json({data: response, message : 'Your response has been recorded successfully' })
     } catch(e){
+      console.log(e);
       res.status(404).json({message : 'Unable to process the request, press continue and please try again'})
     }
   } catch(e) {
+    console.log(e);
     res.status(404).json({message : 'Unable to process the request, press continue and please try again'})
   }
 

@@ -6,6 +6,7 @@ export const submitForm = async (data, setmessage, setloading) => {
         data : data,
         headers: { 'Content-Type':'multipart/form-data' }
       }).then(res => {
+        console.log(res.data);
         setmessage(res.data.message)
       }).catch(err => {
         setmessage(err.message)
