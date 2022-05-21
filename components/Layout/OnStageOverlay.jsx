@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { submitForm } from '@/util/api.helper'
 import Spinner from '../General/Spinner'
 
-export default function OnStageOverlay({color, values}) {
+export default function OnStageOverlay({color, values, setportalOpen}) {
 
   const router = useRouter()
 
@@ -47,9 +47,15 @@ export default function OnStageOverlay({color, values}) {
           </div>
 
           <p>Are you sure want to submit</p>
-          <button className={` flex justify-center items-center space-x-3 w-28 py-2 rounded-md text-white ${color == 'blue' ? 'bg-blue-600' : 'bg-green-500'}`} onClick={handleClick}> 
-            {loading && <Spinner/> } <p className='font-semibold'>Submit</p>
-          </button>
+          <div className='flex space-x-2'>
+            <button className={` flex justify-center items-center space-x-3 w-28 py-2 rounded-md text-white bg-red-600`} onClick={()=>setportalOpen(false) } > 
+              Cancel
+            </button>
+
+            <button className={` flex justify-center items-center space-x-3 w-28 py-2 rounded-md text-white ${color == 'blue' ? 'bg-blue-600' : 'bg-green-500'}`} onClick={handleClick}> 
+              {loading && <Spinner/> } <p className='font-semibold'>Submit</p>
+            </button>
+          </div>
         </div>} 
     </div>
   )

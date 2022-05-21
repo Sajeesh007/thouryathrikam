@@ -35,19 +35,19 @@ export default function OnStageEvents({eventData, setformData, formData, setport
   }
 
   return (
-    <div className="flex flex-col items-center space-y-6 relative">
+    <div className="flex flex-col items-center space-y-6 relative pb-16">
       <h2>Events</h2>
 			<form onSubmit={handleSubmit(onSubmit)} className='form'>
 				<Select label='Event 1' name='on_stage_event_1' values={eventData} error={errors.on_stage_event_1} register={register} />
 				{(addEvent == 2 || addEvent == 3) && <Select name='on_stage_event_2' label='Event 2' values={eventData} error={errors.on_stage_event_2} register={register} /> }
 				{addEvent == 3 &&  <Select name='on_stage_event_3' label='Event 3' values={eventData} error={errors.on_stage_event_3} register={register} /> }
 
-				{addEvent < 3 && <div className='rounded-lg px-2 w-72 h-12 text-white flex justify-center items-center bg-green-600' 
+				{addEvent < 3 && <div className='rounded-lg px-2 w-72 h-12 text-white flex justify-center items-center bg-green-500' 
           onClick={addMoreEvents}>Participate more</div> }
-				{(addEvent == 2 || addEvent == 3) && <div className='rounded-lg px-2 w-72 h-12 text-white flex justify-center items-center bg-red-600' 
+				{(addEvent == 2 || addEvent == 3) && <div className='rounded-lg px-2 w-72 h-12 text-white flex justify-center items-center bg-red-500' 
         onClick={addLessEvents}>Participate less</div> }
 				
-				<input type='submit' value='Submit' className='rounded-lg px-2 w-72 h-12 text-white bg-green-600'/> 
+				<input type='submit' value='Submit' className='rounded-lg px-2 w-72 h-12 text-white bg-green-500'/> 
 			</form>
       <Progress page={2}/>
     </div>

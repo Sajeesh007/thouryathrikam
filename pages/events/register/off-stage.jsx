@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { getAccessToken, getEvents } from '@/util/prismic.helper'
 
 import { BsChevronDoubleDown, BsChevronDoubleUp } from "react-icons/bs"
-import blue from '../../../public/blue.png'
+import bg from '../../../public/tribal_bg_2.webp'
 import blue_small from '../../../public/blue-small.png'
 
 import Portal from '@/components/Layout/Portal'
@@ -15,13 +15,6 @@ import OffStageOverlay from '@/components/Layout/OffStageOverlay'
 
 
 export default function OffStageRegistration() {
-
-  const style = {
-    backgroundImage: `url(${blue.src})`,
-    backgroundSize: 'cover',
-    backgroundRepeat: 'repeat-y',
-    zIndex: '0'
-  }
 
   const style1 = {
     backgroundImage: `url(${blue_small.src})`,
@@ -52,16 +45,17 @@ export default function OffStageRegistration() {
   }
 
   return (
-    <div className="flex flex-col items-center px-3">
+    <div className="flex flex-col items-center px-3 font-man">
       {!click ? (
-        <div className="flex flex-col items-center w-screen h-screen fixed px-3" style={style}>
-          <h1 className='text-left py-60 text-white'>Off Stage <br/> Events Registartion</h1>
-          <div className='flex justify-center items-center bg-white w-14 h-14 rounded-full absolute bottom-20 animate-bounce'>
+        <div className="flex flex-col items-center w-screen h-screen relative "  >
+          <img src={bg.src} alt="bg" className="object-cover absolute -top-20 z-0 brightness-75 contrast-125" />
+          <h2 className='text-center absolute -bottom-20 text-zinc-100 z-20 '>Off Stage Events Registartion</h2>
+          <div className='flex justify-center items-center z-20 bg-white w-14 h-14 rounded-full absolute -bottom-40 animate-bounce'>
             <BsChevronDoubleDown onClick={handleClick}/>
           </div>
         </div>
       ) : (
-        <div className={`flex flex-col items-center w-screen h-screen pt-56 ${portalOpen &&  'filter blur-lg'}`} style={style1} >
+        <div className={`flex flex-col font-sans items-center w-screen h-screen pt-56 ${portalOpen &&  'filter blur-lg'}`} style={style1} >
           {showEvents ?
             <OffStageEvents eventData={eventData} setformData={setformData} formData={formData} setportalOpen={setportalOpen}/> :
             <PersonalDetails setformData={setformData} setshowEvents={setshowEvents} color='blue'/>

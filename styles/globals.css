@@ -2,9 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "MANDMTRIBAL";
+  src: url("../public/MANDMTRIBAL.ttf");
+}
+
 @layer base {
   *{
-      @apply m-0 p-0;
+      @apply m-0 p-0 tracking-widest;
   }
   h1{
     @apply text-5xl font-bold;

@@ -1,50 +1,54 @@
 import { useRouter } from 'next/router'
 
-import Card from "@/components/General/Card"
-import bg from "../public/bg.png"
-import logo from "../public/logo.png"
+import bg1 from "../public/tribal_bg_1.webp"
 import title from "../public/title.png"
+import date from "../public/date.webp"
 
+import Layout from '@/components/Layout/Layout'
+
+
+//top-128  top-150  top-170 top-190
 export default function Home() {
-
-  const style = {
-    backgroundImage: `url(${bg.src})`,
-    backgroundSize: 'cover',
-    backgroundRepeat: 'repeat-y',
-    zIndex: '10'
-  }
 
   const router = useRouter()
 
-  const handleClick = (url) => {
-    router.push(url)
-  }
-
-//bg-gradient-to-b from-blue-500 via-slate-800 to-green-500
   return (
-    <div className="flex flex-col bg-blue-600 relative">
-      
-      <img src={bg.src} alt="bg" className="w-screen absolute top-0 left-0 " style={{height: '750px'}}/>
+    <div className="flex flex-col  bg-zinc-900 relative">
 
-      <div className="relative w-screen " style={{height: '750px'}}>
-        <img src={logo.src} alt="logo" className="w-32 h-32 mx-auto bottom-0 left-0 right-0 absolute" style={{top: '570px'}}/>
-        <img src={title.src} alt="title" className="w-screen absolute -top-28" style={{height: '800px'}}/>
-      </div>
 
-      <div className='flex justify-center items-center bg-white 
-        rounded-t-xl w-screen overflow-x-auto space-x-4 py-4'>
-        <Card color='yellow'/>
-        <Card color='green'/>
-        <Card color='green'/>
+      <div className='relative'>
+        <img src={bg1.src} alt="bg" className="object-cover fixed -top-48 z-0 brightness-50 contrast-125 " />
+        <img src={title.src} alt="bg" className="object-contain fixed top-40 inset-x-0 mx-auto 
+          brightness-125 z-10 " />
+        <img src={date.src} alt="bg" className="object-conatin fixed top-64 inset-x-0 mx-auto 
+          z-10 w-32 h-12 brightness-150 scale-75" />
       </div>
 
 
-      {/* <div className="text-white relative z-20 flex flex-col items-center space-y-6 pb-12">
-        <button className="add-more bg-green-500" onClick={()=>handleClick('/events/registration')}>Register Now</button>
-        <button className="add-more bg-green-500" onClick={()=>handleClick('/events/')}>Explore Events</button>
-      </div> */}
+      <button className='bg-yellow-500 rounded-full w-64 h-14 text-white font-man uppercase text-xl
+       z-50 fixed top-100 inset-x-0 mx-auto shadow-lg shadow-gray-800'
+        onClick={()=>router.push(`/events/register`)}>
+        View Events
+      </button>
+
+      <button className='bg-green-500 rounded-full w-64 h-14 text-white font-man uppercase text-xl 
+        z-50 fixed top-120 inset-x-0 mx-auto shadow-lg shadow-gray-800'
+        onClick={()=>router.push(`/events/register`)}>
+        Register Now
+      </button>
+
+
     </div>
   )
 }
+
+Home.getLayout = function getLayout(page) {
+  return (
+    <Layout home={true}>
+      {page}
+    </Layout>
+  )
+}
+
 
 

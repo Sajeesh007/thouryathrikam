@@ -9,6 +9,7 @@ export const submitForm = async (data, setmessage, setloading) => {
         setmessage(res.data.message)
       }).catch(err => {
         setmessage(err.message)
+        console.log(err);
       }).finally(() =>
         setloading(false)
       )

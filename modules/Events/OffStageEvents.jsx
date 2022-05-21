@@ -41,7 +41,7 @@ export default function OffStageEvents({eventData, setformData, formData, setpor
   }
 
   return (
-    <div className="flex flex-col items-center space-y-6 relative">
+    <div className="flex flex-col items-center space-y-6 relative pb-16">
       <h2>Events</h2>
 			<form onSubmit={handleSubmit(onSubmit)} className='form'>
 				<Select label='Event 1' name='off_stage_event_1' values={eventData} error={errors.off_stage_event_1} register={register} />

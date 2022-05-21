@@ -1,5 +1,6 @@
 import { useState } from "react"
 import logo from "../../public/logo.png"
+import title from "../../public/title.png"
 
 
 export default function Header() {
@@ -14,9 +15,8 @@ export default function Header() {
       items-center px-3">
 
       {/* logo */}
-      <div className="flex items-center space-x-2 text-white">
-        <img src={logo.src} alt="logo" className="w-16 h-16"/>
-        <h4>Thouryathrikam</h4>
+      <div className="flex justify-center items-center text-white w-full">
+        <img src={title.src} alt="logo" className=" h-16"/>
       </div>
       {/* menu icon  */}
       {/* <div>
