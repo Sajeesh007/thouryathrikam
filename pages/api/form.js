@@ -10,11 +10,13 @@ export default async function handler(req,res){
 
   const { body : { data } } = req
 
+  console.log(req.body);
+
   const id = { 
     offstage: '1hpm8b2IPjNS7g9Cyi2zjOlGsaZs6Yot20JN-GTgAPNQ',
     onstage: '1RxZ-aSqdxZk-rrsjbcZ5sUIXdjZ7X31iEYlEYuTRwi8'
   }
-  const spreadsheetId = data.type == 'on_stage' ? id.onstage : id.offstage
+  const spreadsheetId = data?.type == 'on_stage' ? id.onstage : id.offstage
 
   // deleting key of type
   delete data.type
