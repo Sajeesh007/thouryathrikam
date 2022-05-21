@@ -1,12 +1,6 @@
 import { google } from "googleapis";
-import NextCors from 'nextjs-cors';
 
 export default async function handler(req,res){
-
-  await NextCors(req, res, {
-    methods: ['POST'],
-    origin: '*',
-  })
 
   const { body : { data } } = req
 
