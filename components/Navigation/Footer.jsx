@@ -27,7 +27,7 @@ export default function Footer() {
         </div>
         
 
-        <Link href='/events/admit-card'><a>
+        <Link href='/events/off-stage-schedule'><a>
           <div className='flex flex-col justify-center items-center text-xs' id='install'>
             <AiOutlineTeam className='menu-icon text-white'/>
             <p>Admit Card</p>

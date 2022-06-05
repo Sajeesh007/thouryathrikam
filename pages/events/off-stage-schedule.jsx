@@ -6,7 +6,7 @@ import SearchCard from "@/modules/Card/SearchCard"
 export default function AdmitCardPage() {
 
   return (
-    <div className="relative pb-20" style={{
+    <div className="relative pb-20 min-h-screen" style={{
         backgroundImage: 'url('+bg.src+')',
         backgroundRepeat: 'repeat-y'
       }}>
