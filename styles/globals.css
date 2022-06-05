@@ -32,6 +32,12 @@
   p{
     @apply text-sm;
   }
+  th{
+    @apply border px-2;
+  }
+  td{
+    @apply border px-2;
+  }
 }
 
 @layer components {

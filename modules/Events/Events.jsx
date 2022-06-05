@@ -20,10 +20,6 @@ export default function Events({heading, subheading, data, route}) {
           <li key={item}>{item}</li>
         )}
       </ul>
-      {/* <button className='bg-green-500 text-white rounded-2xl w-60 h-10 shadow-lg shadow-gray-800'
-        onClick={()=>router.push(`/events/register/${route}`)}>
-        Register Now
-      </button> */}
     </div>
   )
 }
