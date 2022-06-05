@@ -16,6 +16,7 @@ export default function SearchCard() {
   const [loading, setloading] = useState(false)
 
   const onSubmit = async (data) => {
+    seterror(false)
     await fetchByEmail(data.email, setdata, seterror, setloading)
   }
 
@@ -29,6 +30,7 @@ export default function SearchCard() {
         <h2 className="font-man">Off Stage Schedule</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
             <Input type='email' label='College Mail ID' htmlFor='email' error={errors.name} register={register} required={true}/>
+            {error && <p className="pb-4 text-red-500">Please check the mail you entered</p>}
             <div className="relative">
               { loading ?
                 <button className="submit bg-green-500">
