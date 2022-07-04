@@ -5,6 +5,7 @@ export default class MyDocument extends Document {
       return (
          <Html>
             <Head>
+<meta name="viewport" content="initial-scale=1, user-scalable=no"/>
             <meta name='application-name' content='Thouryathrikam' />
             <meta name='description' content='Thouryathrikam arts fest of gecw' />
             <meta name='theme-color' content='#000000' />
