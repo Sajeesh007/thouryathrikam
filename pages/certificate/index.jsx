@@ -1,9 +1,8 @@
 import bg from "@/public/bg_blue.webp"
-
+import SearchCard from "@/components/General/SearchCard"
 import Layout from "@/components/Layout/Layout"
-import SearchCard from "@/modules/Card/SearchCard"
 
-export default function AdmitCardPage() {
+export default function CertificatePage() {
 
   return (
     <div className="relative pb-20 min-h-screen" style={{
@@ -19,10 +18,10 @@ export default function AdmitCardPage() {
   )
 }
 
-AdmitCardPage.getLayout = function getLayout(page) {
-  return (
-    <Layout>
-      {page}
-    </Layout>
-  )
-}
+CertificatePage.getLayout = function getLayout(page) {
+    return (
+      <Layout>
+        {page}
+      </Layout>
+    )
+  }

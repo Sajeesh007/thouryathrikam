@@ -5,7 +5,7 @@ import { getAccessToken } from "@/util/prismic.helper"
 import bg from "@/public/bg_blue.webp"
 
 import Layout from "@/components/Layout/Layout"
-import Events from "@/modules/Events/Events"
+import Events from "@/components/Events/Events"
 
 export default function EventsPage({ offStageEventsData,  onStageIndividualEventsData, onStageGroupEventsData}) {
 

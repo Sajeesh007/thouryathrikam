@@ -33,8 +33,8 @@ export default function Home() {
 
       <button className='bg-green-500 rounded-full w-72 h-14 text-white font-man uppercase text-xl 
         z-50 fixed top-120 inset-x-0 mx-auto shadow-lg shadow-gray-800'
-        onClick={()=>router.push(`/events/off-stage-schedule`)}>
-          Off Stage Schedule
+        onClick={()=>router.push(`/certificate`)}>
+          Certificate
       </button>
 
 

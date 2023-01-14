@@ -1,7 +1,7 @@
-import { useState } from "react"
 import Link from 'next/link'
 
 import { AiFillHome, AiOutlineTeam } from "react-icons/ai"
+import { TbCertificate } from "react-icons/tb";
 
 
 export default function Footer() {
@@ -27,10 +27,10 @@ export default function Footer() {
         </div>
         
 
-        <Link href='/events/off-stage-schedule'><a>
-          <div className='flex flex-col justify-center items-center text-xs' id='install'>
-            <AiOutlineTeam className='menu-icon text-white'/>
-            <p>Schedule</p>
+        <Link href='/certificate'><a>
+          <div className='flex flex-col justify-center items-center text-xs' >
+            <TbCertificate className='menu-icon text-white '/>
+            <p>Certificate</p>
           </div>
         </a></Link>
       </div>

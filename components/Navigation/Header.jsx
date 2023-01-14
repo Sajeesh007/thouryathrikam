@@ -1,5 +1,4 @@
 import { useState } from "react"
-import logo from "../../public/logo.png"
 import title from "../../public/title.png"
 
 
