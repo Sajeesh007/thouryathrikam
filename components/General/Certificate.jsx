@@ -91,7 +91,7 @@ export default function Certificate({name, prize, dept, event, year, id}) {
           <Image src='/arts_logo.png' style={styles.arts_logo}/>
         </View>
         
-        <Text style={{fontSize: 60, position: 'absolute', top:80, marginLeft: 285}}>Thouryathrikam '22</Text>
+        <Text style={{fontSize: 60, position: 'absolute', top:80, marginLeft: 285}}>Thouryathrikam &apos;22</Text>
 
         <View style={styles.main}>
 
@@ -121,7 +121,7 @@ export default function Certificate({name, prize, dept, event, year, id}) {
                 {(prize != 0 || prize != null) && 'Position for'}
               </Text>
               <Text style={{paddingVertical: 3, fontSize: 22, fontFamily: 'Stylish', textDecoration: 'underline'}}>{event}</Text>
-              <Text style={{fontSize:16}}>in the College Union Arts Fest Thouryathrikam '22</Text>
+              <Text style={{fontSize:16}}>in the College Union Arts Fest Thouryathrikam &apos;22</Text>
               <Text style={{fontSize:16}}>Held on June 5, 6, 7, 8, 9 2022</Text>
             </View>
 

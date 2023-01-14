@@ -51,7 +51,7 @@ export default function SearchCard() {
           <li>Change your name as per the college ID</li>
           <li>
             If there is an error in the event participation or result please contact&nbsp;
-            <a className='text-green-500 underline' target='_blank' href='https://wa.me/916238065153'>wa.me/916238065153</a>
+            <a className='text-green-500 underline' target='_blank' rel="noreferrer" href='https://wa.me/916238065153'>wa.me/916238065153</a>
           </li>
         </ul>
 
