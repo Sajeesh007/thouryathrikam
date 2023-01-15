@@ -14,7 +14,6 @@ const styles = StyleSheet.create({
   arts_logo: {
     width: 40,
     height: 62,
-
   },
   college_text: {
     flexDirection: 'column',
@@ -29,7 +28,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginHorizontal: 20,
-    marginTop: 20,
+    marginTop: 15,
   },
   main: {
     flexDirection: 'row',
@@ -59,7 +58,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     paddingHorizontal: 5,
     paddingVertical: 4,
-    marginVertical: 15,
+    marginTop: 15,
   },
   sign: {
     flexDirection: 'row',
@@ -117,8 +116,7 @@ export default function Certificate({name, prize, dept, event, year, id}) {
                 </Text>
               <Text style={{fontSize:16}}>
                 for {(prize == 0 || prize == null) ? 'Participating for' :  'Securing'}&nbsp;
-                {prize == 1 ? 'First' : prize == 2 ? 'Second' : prize == 3 && 'Third'}&nbsp; 
-                {(prize != 0 || prize != null) && 'Position for'}
+                {prize == 1 ? 'First Position for' : prize == 2 ? 'Second Position for' : prize == 3 && 'Third Position for'}
               </Text>
               <Text style={{paddingVertical: 3, fontSize: 22, fontFamily: 'Stylish', textDecoration: 'underline'}}>{event}</Text>
               <Text style={{fontSize:16}}>in the College Union Arts Fest Thouryathrikam &apos;22</Text>
@@ -132,18 +130,21 @@ export default function Certificate({name, prize, dept, event, year, id}) {
             <View style={styles.sign}>
               <View style={styles.sign_individual}>
                 <Image src='/afthar.png' style={{width: 90, height: 90}}/>
-                <Text style={{textAlign: 'center', fontSize: 16}}>Fine Arts Secretory</Text>
-                <Text style={{textAlign: 'center', fontSize: 14}}>College Union GECW</Text>
+                <Text style={{textAlign: 'center', fontSize: 16}}>Afthar K P</Text>
+                <Text style={{textAlign: 'center', fontSize: 13}}>Fine Arts Secretory</Text>
+                <Text style={{textAlign: 'center', fontSize: 13}}>College Union GECW</Text>
               </View>
               <View style={styles.sign_individual}>
                 <Image src='/afthar.png' style={{width: 90, height: 90}}/>
-                <Text style={{textAlign: 'center', fontSize: 16}}>Staff Advisor</Text>
-                <Text style={{textAlign: 'center', fontSize: 14}}>GECW</Text>
+                <Text style={{textAlign: 'center', fontSize: 16}}>Muhammed Fasil C</Text>
+                <Text style={{textAlign: 'center', fontSize: 13}}>Staff Advisor</Text>
+                <Text style={{textAlign: 'center', fontSize: 13}}>Thouryathrikam &apos;22 GECW</Text>
               </View>
               <View style={styles.sign_individual}>
                 <Image src='/afthar.png' style={{width: 90, height: 90}}/>
-                <Text style={{textAlign: 'center', fontSize: 16}}>Principal</Text>
-                <Text style={{textAlign: 'center', fontSize: 14}}>GECW</Text>
+                <Text style={{textAlign: 'center', fontSize: 16}}>Dr. Anitha V S</Text>
+                <Text style={{textAlign: 'center', fontSize: 13}}>Principal</Text>
+                <Text style={{textAlign: 'center', fontSize: 13}}>GECW</Text>
               </View>
             </View>
 

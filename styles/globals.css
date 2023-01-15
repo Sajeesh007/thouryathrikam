@@ -33,10 +33,13 @@
     @apply text-sm;
   }
   th{
-    @apply border px-2;
+    @apply text-left p-2;
   }
   td{
-    @apply border px-2;
+    @apply p-2;
+  }
+  tr{
+    @apply border border-green-500;
   }
 }
 
