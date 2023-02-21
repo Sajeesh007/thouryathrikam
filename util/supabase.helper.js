@@ -78,7 +78,7 @@ export const fetchAllData = async (setdata) => {
     const personalDetails = await supabase.from('single_participation').select()
     const eventDetails = await supabase.from('single_events').select()
     if (personalDetails?.error || eventDetails?.error) {
-        seterror(true)
+        console.log(personalDetails?.error)
         return
     }
     let ar =[]
@@ -97,3 +97,19 @@ export const fetchByEmail = async (email, setsingleData, setgroupData, seterror,
     setloading(false)
 }
   
+
+export async function uploadSign(image, user, router){
+    const { data, error } = await supabase.storage
+      .from('signature')
+      .upload(`${user}.png`, image, {
+        cacheControl: '3600',
+        upsert: true
+      })
+
+    if (error) {
+     console.log(error);   
+    }else{
+        console.log('s');
+        router.reload()
+    }
+}

@@ -7,6 +7,7 @@ export default function All() {
 
   const {data, setdata} = useData()
 
+
   useEffect(() => {
     fetchAllData(setdata)
   }, [])
@@ -14,8 +15,14 @@ export default function All() {
   const router = useRouter()
 
   return (
-    <div className='flex flex-col'>
-      <h3>Student Details</h3>
+    <div className='flex flex-col max-w-screen'>
+
+      <div className='w-ull flex justify-between px-4 py-2'>
+        <h3>Student Details</h3>
+        <button className='bg-zinc-900 text-white px-4 py-2 rounded-lg' onClick={()=> router.push('/certificate/all/demo')}>
+          Show Demo 
+        </button>
+      </div>
 
       <table>
         <thead>
@@ -51,3 +58,4 @@ export default function All() {
     </div>
   )
 }
+
