@@ -1,7 +1,7 @@
 import { supabase } from "supabase";
 
 
-const matchEvents = (personalDetails, eventDetails) => {
+export const matchEvents = (personalDetails, eventDetails) => {
     eventDetails.forEach(event => {
         if(event.id == personalDetails.event_1){
             personalDetails.cert_1 = `${personalDetails.id}${personalDetails.event_1+10}` 
@@ -54,6 +54,16 @@ const fetchGroup = async (email, setgroupData, seterror) => {
         personal_details: finalDetails,personalDetails
     })
 
+}
+
+export async function fetchSingleEvents(setsingle){
+    const single = await supabase.from('single_events').select()
+    setsingle(single.data)
+}
+
+export async function fetchGroupEvents(setgroup){
+    const group = await supabase.from('group_events').select()
+    setgroup(group.data)
 }
 
 

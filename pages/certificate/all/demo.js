@@ -7,14 +7,14 @@ import { useState, useEffect } from "react";
 export default function Demo() {
 
   const [client, setclient] = useState(false)
-  const [advisor, setadvisor] = useState(false)
+  const [advisor, setadvisor] = useState(true)
   const [principal, setprincipal] = useState(false)
 
   const router = useRouter()
 
-  useEffect(() => {
-    verifyUser()
-  }, [])
+  // useEffect(() => {
+  //   verifyUser()
+  // }, [])
 
   useEffect(() => {
     setclient(true)

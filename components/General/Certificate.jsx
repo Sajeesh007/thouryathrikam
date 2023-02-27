@@ -121,7 +121,9 @@ export default function Certificate({ name, prize, dept, event, year, id }) {
             </Text>
 
             <View style={styles.content}>
-              <Text style={{ fontSize: 16 }}>This is to certify that</Text>
+              <Text style={{ fontSize: 16 }}>
+                This certificate is awarded to
+              </Text>
               <Text
                 style={{
                   fontSize: 30,
@@ -167,7 +169,7 @@ export default function Certificate({ name, prize, dept, event, year, id }) {
                   : dept == "MECH" && "Mechanical Engineering"}
               </Text>
               <Text style={{ fontSize: 16 }}>
-                for{" "}
+                for {prize && "Securing "}
                 <Text
                   style={{
                     fontSize: 22,
@@ -176,15 +178,14 @@ export default function Certificate({ name, prize, dept, event, year, id }) {
                     paddingVertical: 3,
                   }}
                 >
-                  {prize == 0 || prize == null ? "Participating" : "Securing"}
-                  &nbsp;
+                  {prize == 0 || (prize == null && "Participating")}
                   {prize == 1
-                    ? "First Position"
+                    ? "First"
                     : prize == 2
-                    ? "Second Position"
-                    : prize == 3 && "Third Position"}
+                    ? "Second"
+                    : prize == 3 && "Third"}
                 </Text>{" "}
-                for
+                {prize && "Position "}in
               </Text>
               <Text
                 style={{
