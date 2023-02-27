@@ -23,7 +23,7 @@ export default function Name({ name, id, values, event, student, type }) {
     setloading(true);
     const update = `{"event_${event}":null}`;
     const { error } = await supabase
-      .from("single_participation")
+      .from(type)
       .update(JSON.parse(update))
       .eq("id", student);
     if (!error) {
