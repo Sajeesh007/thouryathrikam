@@ -38,8 +38,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   college_logo: {
-    width: 50,
-    height: 50,
+    width: 58,
+    height: 58,
   },
   header: {
     flexDirection: "row",

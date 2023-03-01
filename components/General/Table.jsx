@@ -1,10 +1,9 @@
 import { useRouter } from "next/router";
-import React from "react";
+import { forwardRef } from "react";
 
-export default function Table({ data, event }) {
+export default function Table({ data, event, ref }) {
   const router = useRouter();
 
-  console.log(data);
   return (
     <table>
       <thead>
@@ -23,7 +22,7 @@ export default function Table({ data, event }) {
             <td>{item.year}</td>
             <td>{item.dept}</td>
             <td>
-              <ul className="list-disc">
+              <ul className="list-disc px-4">
                 {item.event_1 == event && (
                   <li
                     className="underline text-green-500 cursor-pointer hover:text-black"
@@ -99,7 +98,7 @@ export default function Table({ data, event }) {
               </ul>
             </td>
             <td>
-              <ul className="list-disc">
+              <ul className="list-disc px-4">
                 {item.event_1 == event && (
                   <li className="">
                     {!item.result_1 ? "Participation" : item.result_1}

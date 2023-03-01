@@ -17,7 +17,7 @@ export default function View() {
   }, [])
 
   useEffect(() => {
-    router.isReady && data == null && router.push('/certificate/all')
+    router.isReady && data == null && router.push('/certificate/all/single')
   }, [router.isReady])
 
   return (

@@ -84,7 +84,8 @@ export async function fetchGroupEvents(setgroup){
 //     });
 // }
 
-export const fetchAllData = async (setdata) => {
+export const fetchAllSingleData = async (setdata, setsingle, setloading) => {
+    setloading(true)
     const personalDetails = await supabase.from('single_participation').select()
     const eventDetails = await supabase.from('single_events').select()
     if (personalDetails?.error || eventDetails?.error) {
@@ -96,7 +97,27 @@ export const fetchAllData = async (setdata) => {
         const finalDetails = matchEvents(ele, eventDetails?.data)
         ar.push(finalDetails)
     })
+    setsingle(eventDetails?.data)
     setdata(ar)
+    setloading(false)
+}
+
+export const fetchAllGroupData = async (setdata, setgroup, setloading) => {
+    setloading(true)
+    const personalDetails = await supabase.from('group_participation').select()
+    const eventDetails = await supabase.from('group_events').select()
+    if (personalDetails?.error || eventDetails?.error) {
+        console.log(personalDetails?.error)
+        return
+    }
+    let ar =[]
+    personalDetails?.data?.forEach(ele => {
+        const finalDetails = matchEvents(ele, eventDetails?.data)
+        ar.push(finalDetails)
+    })
+    setgroup(eventDetails?.data)
+    setdata(ar)
+    setloading(false)
 }
 
 
