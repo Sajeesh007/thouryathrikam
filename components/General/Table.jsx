@@ -17,10 +17,10 @@ export default function Table({ data, event, ref }) {
       </thead>
       <tbody>
         {data?.map((item) => (
-          <tr key={item.Email}>
-            <td>{item.name}</td>
-            <td>{item.year}</td>
-            <td>{item.dept}</td>
+          <tr key={item?.Email}>
+            <td>{item?.name}</td>
+            <td>{item?.year}</td>
+            <td>{item?.dept}</td>
             <td>
               <ul className="list-disc px-4">
                 {item.event_1 == event && (

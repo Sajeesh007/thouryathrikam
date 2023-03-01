@@ -16,12 +16,12 @@ const TableX = forwardRef(function TableX({ data, event }, ref) {
       </thead>
       <tbody>
         {data?.map((item) => (
-          <tr key={item.Email}>
-            <td>{item.Email}</td>
-            <td>{item.name}</td>
-            <td>{item.course}</td>
-            <td>{item.year}</td>
-            <td>{item.dept}</td>
+          <tr key={item?.Email}>
+            <td>{item?.Email}</td>
+            <td>{item?.name}</td>
+            <td>B.Tech</td>
+            <td>{item?.year}</td>
+            <td>{item?.dept}</td>
             <td>
               {item?.event_1 == event && item?.event_1}
               {item?.event_2 == event && item?.event_2}
@@ -31,18 +31,18 @@ const TableX = forwardRef(function TableX({ data, event }, ref) {
               {item?.event_6 == event && item?.event_6}
             </td>
             <td>
-              {item.event_1 == event &&
-                (!item.result_1 ? "Participation" : item.result_1)}
-              {item.event_2 == event &&
-                (!item.result_2 ? "Participation" : item.result_2)}
-              {item.event_3 == event &&
-                (!item.result_3 ? "Participation" : item.result_3)}
-              {item.event_4 == event &&
-                (!item.result_4 ? "Participation" : item.result_4)}
-              {item.event_5 == event &&
-                (!item.result_5 ? "Participation" : item.result_5)}
-              {item.event_6 == event &&
-                (!item.result_6 ? "Participation" : item.result_6)}
+              {item?.event_1 == event &&
+                (!item?.result_1 ? "Participation" : item?.result_1)}
+              {item?.event_2 == event &&
+                (!item?.result_2 ? "Participation" : item?.result_2)}
+              {item?.event_3 == event &&
+                (!item?.result_3 ? "Participation" : item?.result_3)}
+              {item?.event_4 == event &&
+                (!item?.result_4 ? "Participation" : item?.result_4)}
+              {item?.event_5 == event &&
+                (!item?.result_5 ? "Participation" : item?.result_5)}
+              {item?.event_6 == event &&
+                (!item?.result_6 ? "Participation" : item?.result_6)}
             </td>
           </tr>
         ))}
