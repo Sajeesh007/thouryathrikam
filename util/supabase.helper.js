@@ -86,7 +86,7 @@ export async function fetchGroupEvents(setgroup){
 
 export const fetchAllSingleData = async (setdata, setsingle, setloading) => {
     setloading(true)
-    const personalDetails = await supabase.from('single_participation').select()
+    const personalDetails = await supabase.from('single_participation').select().order('id', { ascending: true })
     const eventDetails = await supabase.from('single_events').select()
     if (personalDetails?.error || eventDetails?.error) {
         console.log(personalDetails?.error)

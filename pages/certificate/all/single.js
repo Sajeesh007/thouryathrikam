@@ -48,6 +48,7 @@ export default function SingleAll() {
 
 
 
+
   function handlePrizeChange(e){
     prizeRef.current.value = e.target.value
 	  filterByPrize(eventFiltered, eventRef.current.value, prizeRef.current.value, setfiltered)

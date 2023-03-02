@@ -1,7 +1,7 @@
 export function filterByEvent(data, event, type, seteventFiltered, setfiltered){
     let ar =[]
     data.forEach((el, index) => {
-      for (let i = 1; i < 6; i++) {
+      for (let i = 1; i <= 6; i++) {
         if(el[`event_${i}`] == event) {
           el.index = index
           ar.push(el)
@@ -17,7 +17,7 @@ export function filterByPrize(data, event, type, setfiltered){
     let ar = []
     if(type == 'participation'){
         data.forEach((el) => {
-            for (let i = 1; i < 6; i++) {
+            for (let i = 1; i <= 6; i++) {
                 if(el[`event_${i}`] == event && !el[`result_${i}`]) {
                     ar.push(el)
                     break
@@ -26,7 +26,7 @@ export function filterByPrize(data, event, type, setfiltered){
         })
     }else if(type == 'prize') {
         data.forEach((el) => {
-            for (let i = 1; i < 6; i++) {
+            for (let i = 1; i <= 6; i++) {
               if(el[`event_${i}`] == event && el[`result_${i}`]) {
                 ar.push(el)
                 break

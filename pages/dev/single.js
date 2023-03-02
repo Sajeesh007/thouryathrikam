@@ -23,16 +23,15 @@ export default function Dev() {
     
 
     async function fetchSingle(){
-        const personalDetails = await supabase.from('single_participation').select().order('id', { ascending: true })
+        const personalDetails = await supabase.from('single_participation').select().order('name', { ascending: true })
         const eventDetails = await supabase.from('single_events').select()
         const finalDetails = matchEvents(personalDetails?.data, eventDetails?.data)
         seteventData(eventDetails?.data)
         setdata(finalDetails)
         setfilterd(finalDetails)
-        filterByEvent(setfilterd, finalDetails, eventRef, yearRef)
-
-        
+        filterByEvent(setfilterd, finalDetails, eventRef, yearRef)   
     }
+
 
     function matchEvents(personalDetails, eventDetails){
         personalDetails.forEach((student) => 
