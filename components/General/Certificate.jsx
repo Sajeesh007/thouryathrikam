@@ -178,7 +178,7 @@ export default function Certificate({ name, prize, dept, event, year, id }) {
                     paddingVertical: 3,
                   }}
                 >
-                  {prize == 0 || (prize == null && "Participating")}
+                  {(prize === 0 || prize == null) && "Participating"}
                   {prize == 1
                     ? "First"
                     : prize == 2
