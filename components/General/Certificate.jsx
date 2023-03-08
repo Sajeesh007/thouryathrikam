@@ -169,7 +169,7 @@ export default function Certificate({ name, prize, dept, event, year, id }) {
                   : dept == "MECH" && "Mechanical Engineering"}
               </Text>
               <Text style={{ fontSize: 16 }}>
-                for {prize && "Securing "}
+                for {(prize !== 0 || prize !== null) && "Securing "}
                 <Text
                   style={{
                     fontSize: 22,
@@ -185,7 +185,7 @@ export default function Certificate({ name, prize, dept, event, year, id }) {
                     ? "Second"
                     : prize == 3 && "Third"}
                 </Text>{" "}
-                {prize && "Position "}in
+                {(prize !== 0 || prize !== null) && "Position "}in
               </Text>
               <Text
                 style={{
