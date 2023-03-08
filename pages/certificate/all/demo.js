@@ -44,7 +44,7 @@ export default function Demo() {
         <PDFViewer width={1600} height={1000}>
           <Certificate
             name={"Afthar K P"}
-            prize={0}
+            prize={1}
             dept={"ME"}
             year={"2"}
             event={"Poem Writing Malayalam"}
