@@ -154,7 +154,7 @@ export default function SearchCard() {
           <div className="flex flex-col space-y-2">
             <h3>Event Participation Details</h3>
             <p className="text-green-500 break-words">
-              Please wait sometimes while generating the certificates.
+              Please wait while generating the certificates.
             </p>
           </div>
           <div className="flex flex-col space-y-8">
