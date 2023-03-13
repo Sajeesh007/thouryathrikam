@@ -86,10 +86,14 @@ export default function SearchCard() {
           <h3>Validate Details</h3>
 
           <ul className="list-disc text-sm mx-4">
-            <li>Change your name as per the college ID</li>
+            <li>Change your name as per the college ID.</li>
             <li>
-              If there is an error in the event participation or result please
-              contact&nbsp;
+              Please note that, year appears in the certificate will be not the
+              current year.
+            </li>
+            <li>
+              If there is an error in the year, department, event participation
+              or result, please contact&nbsp;
               <a
                 className="text-green-500 underline"
                 target="_blank"

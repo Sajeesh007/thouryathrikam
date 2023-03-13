@@ -44,7 +44,7 @@ export default function PersonalDetails({
           </button>
           {error && (
             <p className=" text-white font-bold">
-              The name you entered does&apos;t match with the college mail id.
+              The name you entered doesn&apos;t match with the college mail id.
               If this is a mistake please contact through above number.
             </p>
           )}

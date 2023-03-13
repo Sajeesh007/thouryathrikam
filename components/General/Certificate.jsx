@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
   },
   main_content: {
     width: 750,
-    marginTop: 97,
+    marginTop: 100,
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 10,
+    marginTop: 6,
   },
   certificate_id: {
     flexDirection: "row",
@@ -105,9 +105,10 @@ export default function Certificate({ name, prize, dept, event, year, id }) {
 
         <Text
           style={{
-            fontSize: 60,
+            fontSize: 70,
             position: "absolute",
             top: 80,
+            fontFamily: "Stylish",
             marginLeft: 285,
           }}
         >
@@ -116,7 +117,7 @@ export default function Certificate({ name, prize, dept, event, year, id }) {
 
         <View style={styles.main}>
           <View style={styles.main_content}>
-            <Text style={{ fontSize: 35, marginVertical: 5 }}>
+            <Text style={{ fontSize: 35, marginTop: 6 }}>
               CERTIFICATE OF APPRECIATION
             </Text>
 
@@ -126,7 +127,7 @@ export default function Certificate({ name, prize, dept, event, year, id }) {
               </Text>
               <Text
                 style={{
-                  fontSize: 30,
+                  fontSize: 26,
                   paddingVertical: 2,
                   fontFamily: "Stylish",
                   textDecoration: "underline",
@@ -216,7 +217,7 @@ export default function Certificate({ name, prize, dept, event, year, id }) {
                   Afthar K P
                 </Text>
                 <Text style={{ textAlign: "center", fontSize: 13 }}>
-                  Fine Arts Secretory
+                  Fine Arts Secretary
                 </Text>
                 <Text style={{ textAlign: "center", fontSize: 13 }}>
                   College Union GECW
@@ -231,7 +232,7 @@ export default function Certificate({ name, prize, dept, event, year, id }) {
                   Muhammed Fasil C
                 </Text>
                 <Text style={{ textAlign: "center", fontSize: 13 }}>
-                  Staff Advisor
+                  Staff Adviser
                 </Text>
                 <Text style={{ textAlign: "center", fontSize: 13 }}>
                   Thouryathrikam &apos;22 GECW

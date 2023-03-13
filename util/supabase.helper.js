@@ -17,7 +17,8 @@ export async function handleEdit(
     let flag = 0;
     names.forEach((item) => {
       const regexp = new RegExp(item, "i");
-      email.search(regexp) === 0 && (flag = 1);
+      const index = email.indexOf("_");
+      email.slice(0, index).search(regexp) === 0 && (flag = 1);
     });
     if (flag === 0) {
       seterror(true);
