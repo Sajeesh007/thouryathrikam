@@ -88,7 +88,7 @@ export default function SearchCard() {
           <ul className="list-disc text-sm mx-4">
             <li>Change your name as per the college ID.</li>
             <li>
-              Please note that, year appears in the certificate will be not the
+              Please note that, year appears in the certificate will not be the
               current year.
             </li>
             <li>
