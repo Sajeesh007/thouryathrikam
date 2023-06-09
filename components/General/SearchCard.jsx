@@ -77,7 +77,7 @@ export default function SearchCard() {
 						<div className="flex flex-col space-y-2">
 							<p className=" text-zinc-100">
 								Also check with your personal mail id or the following mail ids
-								which is in our database, if you haven't got the required
+								which is in our database, if you haven&apos;t got the required
 								certificates or entered wrong mail id when registering.
 							</p>
 							<ul className="list-disc text-sm mx-2 text-zinc-100">
